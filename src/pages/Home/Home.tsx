@@ -4,9 +4,19 @@ import tv from "../../assets/images/tv.png";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/rootReducer";
 import { getMovies } from "../../redux/actions/actions";
-
+import { movieData } from "../../redux/actions/actionTypes";
 function Home() {
+   type movieTypes = [
+      { now_playing_movies: { title: string; movies: movieData[] } },
+      { popular_movies: { title: string; movies: movieData[] } },
+      { top_rated_movies: { title: string; movies: movieData[] } }
+   ];
    const [input, setInput] = useState<string>("");
+   const [movies, setMovies] = useState<movieTypes>([
+      { now_playing_movies: { title: "", movies: [] } },
+      { popular_movies: { title: "", movies: [] } },
+      { top_rated_movies: { title: "", movies: [] } },
+   ]);
 
    // get input value
    const handleChange = (
@@ -16,11 +26,25 @@ function Home() {
    };
 
    // fetch the movies
+
+   const {
+      loading,
+      movies: { nowPlaying, popular, topRated },
+   } = useSelector((state: RootState) => state.movieReducer);
    const dispatch = useDispatch();
    useEffect(() => {
       dispatch(getMovies());
+      if (!loading) {
+         setMovies([
+            {
+               now_playing_movies: { title: "now playing", movies: nowPlaying },
+            },
+            { popular_movies: { title: "popular", movies: popular } },
+            { top_rated_movies: { title: "now playing", movies: topRated } },
+         ]);
+      }
    }, [dispatch]);
-   const state = useSelector((state: RootState) => state.movieReducer.movies);
+
    return (
       <section className="home">
          <div className="home-container">
