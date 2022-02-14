@@ -1,8 +1,10 @@
+import Home from "./pages/Home/Home";
+
 const App = () => {
    return (
-      <div>
-         <p>app</p>
-      </div>
+      <>
+         <Home />
+      </>
    );
 };
 

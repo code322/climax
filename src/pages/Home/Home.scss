@@ -1,0 +1,22 @@
+@use "../../index.scss";
+.home {
+   min-height: 100vh;
+
+   .home-container {
+      .hero-container {
+         margin: auto;
+         width: 100%;
+         border: 1px solid white;
+         position: relative;
+         padding: 2rem 1rem;
+         input {
+            font-size: 1rem;
+            padding: 0.3rem 0.5rem;
+            border-radius: 0.8rem;
+            border: none;
+            outline: none;
+            width: 100%;
+         }
+      }
+   }
+}

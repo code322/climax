@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+// typography
+$textColor: white;
+$backgroundColor: black;
+$fontFamily: "Poppins", sans-serif;
+
+// margins
+$mg-1: 0.5rem;
+$mg-2: 1rem;
+$mg-3: 1.5rem;
+$mg-4: 2rem;
+$mg-5: 2.5rem;
+$mg-6: 3rem;
+
+body {
+   font-family: $fontFamily;
+   background-color: $backgroundColor;
+   color: $textColor;
+}
+
+#root {
+   background-color: "black";
+}
+
+.bd-container {
+   max-width: 1200px;
+}
