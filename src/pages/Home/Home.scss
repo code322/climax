@@ -34,6 +34,9 @@
                      text-transform: capitalize;
                      font-size: index.$xlFontSize;
                   }
+                  p {
+                     font-size: index.$smallFontSize;
+                  }
                }
             }
 

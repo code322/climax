@@ -1,8 +1,17 @@
-import React from "react";
+import { useState } from "react";
 import "./Home.scss";
 import tv from "../../assets/images/tv.png";
 
 function Home() {
+   const [input, setInput] = useState<string>("");
+
+   const handleChange = (
+      e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+   ) => {
+      setInput(e.target.value);
+   };
+   console.log(input);
+
    return (
       <section className="home">
          <div className="home-container ">
@@ -12,6 +21,8 @@ function Home() {
                      className="input "
                      type="text"
                      placeholder="Search Movie..."
+                     onChange={handleChange}
+                     value={input}
                   />
                </div>
                <div className="hero">
