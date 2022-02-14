@@ -1,21 +1,48 @@
 @use "../../index.scss";
 .home {
    min-height: 100vh;
-
    .home-container {
       .hero-container {
          margin: auto;
          width: 100%;
-         border: 1px solid white;
          position: relative;
-         padding: 2rem 1rem;
-         input {
-            font-size: 1rem;
-            padding: 0.3rem 0.5rem;
-            border-radius: 0.8rem;
-            border: none;
-            outline: none;
-            width: 100%;
+         .input-container {
+            padding: index.$mg-5 index.$mg-3;
+            input {
+               font-size: 1rem;
+               padding: 0.5rem 1rem;
+               border-radius: 1rem;
+               border: none;
+               outline: none;
+               width: 100%;
+            }
+         }
+         .hero {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 0.5rem solid #333;
+            border-top: 0.5rem solid #333;
+            padding: index.$mg-5 index.$mg-3;
+            .hero-wrapper {
+               .hero-info {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  text-align: center;
+                  h1 {
+                     text-transform: capitalize;
+                     font-size: index.$fontSizeXL;
+                  }
+               }
+            }
+
+            .img-container {
+               width: 100%;
+               img {
+                  width: 100%;
+               }
+            }
          }
       }
    }
