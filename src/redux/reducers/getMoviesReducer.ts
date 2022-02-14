@@ -30,14 +30,17 @@ export const movieReducer = (
          return {
             ...state,
             loading: false,
-            movies: action.payload,
+            movies: {
+               topRated: action.payload.topRated,
+               popular: action.payload.popular,
+               nowPlaying: action.payload.nowPlaying,
+            },
             err: "",
          };
       case actionTypes.FETCH_MOVIE_FAIL:
          return {
             ...state,
             loading: false,
-
             err: action.payload,
          };
 

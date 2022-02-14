@@ -36,7 +36,6 @@ export const getMovies = () => async (dispatch: Dispatch<Actions>) => {
             nowPlaying: nowPlaying.data.results,
          },
       });
-      // console.log(topRated);
    } catch (err: any) {
       dispatch({
          type: actionTypes.FETCH_MOVIE_FAIL,

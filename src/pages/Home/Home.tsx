@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Home.scss";
 import tv from "../../assets/images/tv.png";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../redux/rootReducer";
+import { getMovies } from "../../redux/actions/actions";
 
 function Home() {
    const [input, setInput] = useState<string>("");
@@ -12,6 +15,12 @@ function Home() {
       setInput(e.target.value);
    };
 
+   // fetch the movies
+   const dispatch = useDispatch();
+   useEffect(() => {
+      dispatch(getMovies());
+   }, [dispatch]);
+   const state = useSelector((state: RootState) => state.movieReducer.movies);
    return (
       <section className="home">
          <div className="home-container">
