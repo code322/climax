@@ -8,6 +8,7 @@ import {
    API_KEY,
 } from "../../tools/api/url";
 
+// fetch movies
 export const getMovies = () => async (dispatch: Dispatch<Actions>) => {
    dispatch({ type: actionTypes.FETCH_MOVIE_LOADING });
    try {
