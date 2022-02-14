@@ -5,17 +5,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/rootReducer";
 import { getMovies } from "../../redux/actions/actions";
 import { movieData } from "../../redux/actions/actionTypes";
-function Home() {
-   type movieTypes = [
-      { now_playing_movies: { title: string; movies: movieData[] } },
-      { popular_movies: { title: string; movies: movieData[] } },
-      { top_rated_movies: { title: string; movies: movieData[] } }
-   ];
+import Movies from "../../components/Movies";
+export type movieTypes = [
+   { title: string; movies: movieData[] },
+   { title: string; movies: movieData[] },
+   { title: string; movies: movieData[] }
+];
+const Home: React.FC = () => {
    const [input, setInput] = useState<string>("");
    const [movies, setMovies] = useState<movieTypes>([
-      { now_playing_movies: { title: "", movies: [] } },
-      { popular_movies: { title: "", movies: [] } },
-      { top_rated_movies: { title: "", movies: [] } },
+      { title: "", movies: [] },
+      { title: "", movies: [] },
+      { title: "", movies: [] },
    ]);
 
    // get input value
@@ -25,8 +26,7 @@ function Home() {
       setInput(e.target.value);
    };
 
-   // fetch the movies
-
+   // dispatch getMovies action and store movies from reducer into state
    const {
       loading,
       movies: { nowPlaying, popular, topRated },
@@ -36,11 +36,9 @@ function Home() {
       dispatch(getMovies());
       if (!loading) {
          setMovies([
-            {
-               now_playing_movies: { title: "now playing", movies: nowPlaying },
-            },
-            { popular_movies: { title: "popular", movies: popular } },
-            { top_rated_movies: { title: "now playing", movies: topRated } },
+            { title: "now playing", movies: nowPlaying },
+            { title: "popular", movies: popular },
+            { title: "now playing", movies: topRated },
          ]);
       }
    }, [dispatch]);
@@ -73,10 +71,12 @@ function Home() {
                   </div>
                </div>
             </div>
-            <div className="movie-container"></div>
+            <div className="movies-container">
+               <Movies movies={movies} />
+            </div>
          </div>
       </section>
    );
-}
+};
 
 export default Home;
