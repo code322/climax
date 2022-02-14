@@ -5,16 +5,16 @@ import tv from "../../assets/images/tv.png";
 function Home() {
    const [input, setInput] = useState<string>("");
 
+   // get input value
    const handleChange = (
       e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
    ) => {
       setInput(e.target.value);
    };
-   console.log(input);
 
    return (
       <section className="home">
-         <div className="home-container ">
+         <div className="home-container">
             <div className="hero-container">
                <div className="input-container bd-container">
                   <input
@@ -40,6 +40,7 @@ function Home() {
                   </div>
                </div>
             </div>
+            <div className="movie-container"></div>
          </div>
       </section>
    );
