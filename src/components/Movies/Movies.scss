@@ -1,60 +1,128 @@
 @use "../../index.scss";
 
-// .row:nth-child(1n) {
-//    background: #cfb53b;
-// }
-
-// .row:nth-child(2n) {
-//    background: gold;
-// }
-
-.tiles {
-   padding: 0px;
-   margin: 0px;
-   height: 200px;
-   display: flex;
-   width: 100%;
-   justify-content: space-between;
-}
+// posters size
+$posterWidth: 100px;
 
 .movies-wrapper {
-   overflow: hidden;
-   padding: index.$mg-3 0;
+   padding-top: index.$mg-3;
    .movies {
       .title {
          text-transform: capitalize;
-         margin-bottom: index.$mg-1;
-         margin-left: index.$mg-1;
+         margin: index.$mg-2 0 index.$mg-1 index.$mg-1;
       }
-      .container {
-         height: 200px;
-         overflow: hidden !important;
-         overflow-x: scroll !important;
+      .movies-data {
+         .swiper {
+            overflow: hidden;
+            .swiper-wrapper {
+               display: flex;
+               align-items: center;
+               .swiper-slide {
+                  width: $posterWidth;
+                  height: auto;
+                  border-radius: 8px;
+                  margin-left: index.$mg-1;
+                  cursor: grab;
+                  .row {
+                     cursor: grab;
+                     a {
+                        img {
+                           cursor: grab;
+                           width: 100%;
+                           height: 100%;
+                           border-radius: 8px;
+                        }
+                     }
+                  }
+               }
+            }
+         }
       }
    }
-   .movies-data {
-      .row {
-         display: flex;
-         // width: 300px;
-         // height: 170px;
-         margin: 0px 8px;
-         align-items: center;
-         justify-content: center;
-         color: white;
-         font-family: sans-serif;
-         font-weight: bold;
-         font-size: 24px;
-         cursor: grab;
+}
 
-         flex: 1;
-         a {
-            width: 100px;
-            height: 170px;
-            border-radius: 2px;
-            img {
-               border-radius: 5px;
-               height: 100%;
-               width: 100%;
+@media only screen and (min-width: 700px) {
+   $posterWidth: 150px;
+
+   .movies-wrapper {
+      padding-top: index.$mg-3;
+      .movies {
+         .title {
+            text-transform: capitalize;
+            margin: index.$mg-2 0 index.$mg-1 index.$mg-1;
+         }
+         .movies-data {
+            .swiper {
+               overflow: hidden;
+               .swiper-wrapper {
+                  display: flex;
+                  align-items: center;
+                  .swiper-slide {
+                     width: $posterWidth;
+                     height: auto;
+                     border-radius: 8px;
+                     margin-left: index.$mg-1;
+                     cursor: grab;
+                     .row {
+                        cursor: grab;
+                        a {
+                           img {
+                              cursor: grab;
+                              width: 100%;
+                              height: 100%;
+                              border-radius: 8px;
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@media only screen and(min-width: 900px) {
+   $posterWidth: 250px;
+   .movies-wrapper {
+      // background-color: blue;
+      padding-top: index.$mg-3;
+      .movies {
+         .title {
+            text-transform: capitalize;
+            margin: index.$mg-2 0 0 index.$mg-1;
+            font-size: 30px;
+         }
+         .movies-data {
+            .swiper {
+               overflow: hidden;
+               .swiper-wrapper {
+                  display: flex;
+                  align-items: center;
+                  padding: 1rem 0;
+                  .swiper-slide {
+                     width: $posterWidth;
+                     height: auto;
+                     border-radius: 8px;
+                     margin-left: index.$mg-1;
+                     cursor: grab;
+                     .row {
+                        cursor: grab;
+                        a {
+                           img {
+                              display: block;
+                              cursor: grab;
+                              width: 100%;
+                              height: 90%;
+                              border-radius: 8px;
+                              transition: all 0.35s ease-in-out;
+                              &:hover {
+                                 transform: scale(1.03);
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
             }
          }
       }

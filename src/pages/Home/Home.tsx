@@ -14,7 +14,6 @@ export type movieTypes = [
 ];
 const Home: React.FC = () => {
    const [input, setInput] = useState<string>("");
-   const [render, setRender] = useState(false);
 
    // get input value
    const handleChange = (
@@ -31,9 +30,6 @@ const Home: React.FC = () => {
    const dispatch = useDispatch();
    useEffect(() => {
       dispatch(getMovies());
-      setInterval(() => {
-         setRender(true);
-      }, 2000);
    }, [dispatch]);
 
    let movies: movieTypes = [
