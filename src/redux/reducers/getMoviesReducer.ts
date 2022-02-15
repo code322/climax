@@ -17,6 +17,7 @@ let initialState: interfaceState = {
       popular: [],
       nowPlaying: [],
    },
+   err: "",
 };
 
 export const movieReducer = (
@@ -25,10 +26,18 @@ export const movieReducer = (
 ): interfaceState => {
    switch (action.type) {
       case actionTypes.FETCH_MOVIE_LOADING:
-         return { ...state, loading: true };
-      case actionTypes.FETCH_MOVIE_SUCCESS:
          return {
             ...state,
+            loading: true,
+            movies: {
+               topRated: [],
+               popular: [],
+               nowPlaying: [],
+            },
+            err: "",
+         };
+      case actionTypes.FETCH_MOVIE_SUCCESS:
+         return {
             loading: false,
             movies: {
                topRated: action.payload.topRated,
