@@ -7,6 +7,7 @@ import { getMovies } from "../../redux/actions/getMovieAction";
 import { movieData } from "../../redux/actions/actionTypes";
 import Movies from "../../components/Movies/Movies";
 import { TailSpin } from "react-loader-spinner";
+import { getDetails } from "../../redux/actions/getDetails";
 export type movieTypes = [
    { title: string; moviesData: movieData[] },
    { title: string; moviesData: movieData[] },
@@ -21,6 +22,7 @@ const Home: React.FC = () => {
    const dispatch = useDispatch();
    useEffect(() => {
       dispatch(getMovies());
+      dispatch(getDetails(568124));
    }, [dispatch]);
 
    let movies: movieTypes = [

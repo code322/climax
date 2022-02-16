@@ -56,4 +56,10 @@ type actionGetDetailsFail = {
    payload: string;
 };
 
-export type Actions = actionLoad | actionSuccess | actionFail;
+export type Actions =
+   | actionLoad
+   | actionSuccess
+   | actionFail
+   | actionGetDetailsFail
+   | actionGetDetailsLoading
+   | actionGetDetailsSuccess;
