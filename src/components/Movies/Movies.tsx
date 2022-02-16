@@ -18,24 +18,13 @@ interface moviesInterface {
 }
 
 const Movies: React.FC<moviesInterface> = ({ movies }) => {
-   const scrollRef = useRef<HTMLHeadingElement>(null);
-
-   const enableKeyboardCursorToScroll = () => {
-      if (scrollRef.current) {
-         scrollRef.current.focus();
-      }
-   };
    return (
       <div className="movies-wrapper">
          {movies.map(({ title, moviesData }, index) => {
             return (
                <div key={index} className="movies">
                   <h3 className="title">{title}</h3>
-                  <div
-                     className="movies-data tiles"
-                     onFocus={enableKeyboardCursorToScroll}
-                     ref={scrollRef}
-                  >
+                  <div className="movies-data tiles">
                      <Swiper
                         slidesPerView={"auto"}
                         spaceBetween={5}
@@ -50,7 +39,7 @@ const Movies: React.FC<moviesInterface> = ({ movies }) => {
                            return (
                               <SwiperSlide key={Number(id)}>
                                  <div className="row" key={Number(id)}>
-                                    <Link to="/home">
+                                    <Link to={`/details/${id}`}>
                                        <img
                                           src={`${poster_url}${poster_path}`}
                                           alt=""

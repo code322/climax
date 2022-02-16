@@ -9,18 +9,6 @@
          display: flex;
          flex-direction: column;
          align-items: center;
-         .input-container {
-            padding: index.$mg-5 index.$mg-3;
-            width: 100%;
-            input {
-               font-size: 1rem;
-               padding: 0.5rem 1rem;
-               border-radius: 1rem;
-               border: none;
-               outline: none;
-               width: 100%;
-            }
-         }
          .hero {
             display: flex;
             flex-direction: column;

@@ -13,15 +13,6 @@ export type movieTypes = [
    { title: string; moviesData: movieData[] }
 ];
 const Home: React.FC = () => {
-   const [input, setInput] = useState<string>("");
-
-   // get input value
-   const handleChange = (
-      e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
-   ) => {
-      setInput(e.target.value);
-   };
-
    // dispatch getMovies action
    const {
       loading,
@@ -42,15 +33,6 @@ const Home: React.FC = () => {
       <section className="home">
          <div className="home-container">
             <div className="hero-container">
-               <div className="input-container bd-container">
-                  <input
-                     className="input "
-                     type="text"
-                     placeholder="Search Movie..."
-                     onChange={handleChange}
-                     value={input}
-                  />
-               </div>
                <div className="hero">
                   <div className="hero-wrapper bd-container">
                      <div className="hero-info">
