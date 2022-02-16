@@ -96,6 +96,13 @@ $posterWidth: 100px;
             .swiper {
                overflow: hidden;
                overflow-x: scroll;
+
+               -ms-overflow-style: none;
+               scrollbar-width: none;
+               &::-webkit-scrollbar {
+                  display: none;
+               }
+
                .swiper-wrapper {
                   display: flex;
                   align-items: center;
