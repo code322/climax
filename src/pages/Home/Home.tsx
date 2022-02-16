@@ -3,7 +3,7 @@ import "./Home.scss";
 import tv from "../../assets/images/tv.png";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/rootReducer";
-import { getMovies } from "../../redux/actions/actions";
+import { getMovies } from "../../redux/actions/getMovieAction";
 import { movieData } from "../../redux/actions/actionTypes";
 import Movies from "../../components/Movies/Movies";
 import { TailSpin } from "react-loader-spinner";
