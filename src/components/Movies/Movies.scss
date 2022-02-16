@@ -95,6 +95,7 @@ $posterWidth: 100px;
          .movies-data {
             .swiper {
                overflow: hidden;
+               overflow-x: scroll;
                .swiper-wrapper {
                   display: flex;
                   align-items: center;

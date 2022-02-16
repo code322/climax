@@ -1,13 +1,17 @@
 @use "../../index.scss";
 .home {
-   min-height: 100vh;
    .home-container {
+      width: 100%;
+      position: relative;
       .hero-container {
          margin: auto;
          width: 100%;
-         position: relative;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
          .input-container {
             padding: index.$mg-5 index.$mg-3;
+            width: 100%;
             input {
                font-size: 1rem;
                padding: 0.5rem 1rem;
@@ -23,6 +27,9 @@
             border-bottom: 0.5rem solid #333;
             border-top: 0.5rem solid #333;
             padding: index.$mg-5 index.$mg-3;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
             .hero-wrapper {
                .hero-info {
                   display: flex;
@@ -36,14 +43,134 @@
                   }
                   p {
                      font-size: index.$smallFontSize;
+                     max-width: 450px;
                   }
                }
             }
 
             .img-container {
+               display: flex;
+               justify-content: center;
                width: 100%;
                img {
                   width: 100%;
+                  max-width: 600px;
+               }
+            }
+         }
+      }
+   }
+}
+
+// tablets and ipad media query
+@media (min-width: 700px) {
+   .home {
+      min-height: 100vh;
+      .home-container {
+         .hero-container {
+            margin: auto;
+            width: 100%;
+            position: relative;
+            .input-container {
+               padding: index.$mg-5 index.$mg-3;
+               input {
+                  font-size: 1rem;
+                  padding: 0.5rem 1rem;
+                  border-radius: 1rem;
+                  border: none;
+                  outline: none;
+                  width: 100%;
+               }
+            }
+            .hero {
+               display: flex;
+               flex-direction: column;
+               border-bottom: 0.5rem solid #333;
+               border-top: 0.5rem solid #333;
+               padding: index.$mg-5 index.$mg-3;
+               .hero-wrapper {
+                  .hero-info {
+                     display: flex;
+                     flex-direction: column;
+                     justify-content: center;
+                     align-items: center;
+                     text-align: center;
+                     h1 {
+                        text-transform: capitalize;
+                        font-size: 35px;
+                     }
+                     p {
+                        font-size: index.$mediumFontSize;
+                     }
+                  }
+               }
+
+               .img-container {
+                  width: 100%;
+                  img {
+                     width: 100%;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+// desktop media query
+@media (min-width: 900px) {
+   .home {
+      min-height: 100vh;
+      .home-container {
+         .hero-container {
+            margin: auto;
+            width: 100%;
+            position: relative;
+            .input-container {
+               padding: index.$mg-5 index.$mg-3;
+               input {
+                  font-size: 1rem;
+                  padding: 0.5rem 1rem;
+                  border-radius: 1rem;
+                  border: none;
+                  outline: none;
+                  width: 100%;
+               }
+            }
+            .hero {
+               display: flex;
+               border-bottom: 0.5rem solid #333;
+               border-top: 0.5rem solid #333;
+               padding: index.$mg-5 index.$mg-3;
+               flex-direction: row;
+               .hero-wrapper {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                  width: 100%;
+
+                  .hero-info {
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                     text-align: center;
+                     flex: 1;
+                     h1 {
+                        text-transform: capitalize;
+                        font-size: 60px;
+                     }
+                     p {
+                        font-size: index.$largeFontSize;
+                     }
+                  }
+               }
+
+               .img-container {
+                  width: 100%;
+                  flex: 1;
+                  img {
+                     width: 100%;
+                  }
                }
             }
          }
