@@ -21,7 +21,7 @@ const Description: React.FC<descriptionInterface> = ({
                <h3>Genres:</h3>
                <div>
                   {genres.map((genre) => {
-                     return <p>{genre.name}</p>;
+                     return <p key={genre.id}>{genre.name}</p>;
                   })}
                </div>
             </div>

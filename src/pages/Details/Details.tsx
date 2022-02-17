@@ -8,6 +8,7 @@ import { RootState } from "../../redux/rootReducer";
 import { youtube_url } from "../../tools/api/url";
 import YouTube from "../../components/YouTube/YouTube";
 import Description from "../../components/Description/Description";
+import Recommendations from "../../components/Recommendations/Recommendations";
 
 const Details: React.FC = () => {
    const { id } = useParams();
@@ -25,7 +26,7 @@ const Details: React.FC = () => {
          recommended,
       },
    } = useSelector((state: RootState) => state.detailsReducer);
-
+   console.log(recommended);
    return (
       <section className="details">
          <div className="details-container bd-container">
@@ -42,6 +43,9 @@ const Details: React.FC = () => {
                      genres={genres}
                   />
                </div>
+
+               {/* === Recommendations=== */}
+               <Recommendations recommended={recommended} />
             </div>
          </div>
       </section>
