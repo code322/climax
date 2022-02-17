@@ -1,4 +1,3 @@
-import { InterfaceType } from "typescript";
 import { actionTypes, Actions, detailsTypes } from "./../actions/actionTypes";
 
 interface detailsInterface {
@@ -30,7 +29,7 @@ const initialState: detailsInterface = {
 export const detailsReducer = (
    state: detailsInterface = initialState,
    action: Actions
-) => {
+): detailsInterface => {
    switch (action.type) {
       case actionTypes.GET_DETAILS_LOADING:
          return {

@@ -28,7 +28,7 @@ type actionFail = {
 };
 
 export interface movieData {
-   id: Number;
+   id: number;
    poster_path: string;
 }
 

@@ -22,7 +22,6 @@ const Home: React.FC = () => {
    const dispatch = useDispatch();
    useEffect(() => {
       dispatch(getMovies());
-      dispatch(getDetails(568124));
    }, [dispatch]);
 
    let movies: movieTypes = [
