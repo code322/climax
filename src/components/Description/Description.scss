@@ -1,0 +1,25 @@
+@use "../../index.scss";
+
+.description {
+   .description-container {
+      display: flex;
+      flex-direction: column;
+      div {
+         h2,
+         h3 {
+            margin-bottom: 3px;
+            margin-top: index.$mg-2;
+
+            line-height: 1.2;
+         }
+      }
+      .genre-container {
+         div {
+            display: flex;
+            p {
+               margin-right: index.$mg-1;
+            }
+         }
+      }
+   }
+}

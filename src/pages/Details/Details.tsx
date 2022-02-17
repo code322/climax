@@ -7,6 +7,7 @@ import { getDetails } from "../../redux/actions/getDetails";
 import { RootState } from "../../redux/rootReducer";
 import { youtube_url } from "../../tools/api/url";
 import YouTube from "../../components/YouTube/YouTube";
+import Description from "../../components/Description/Description";
 
 const Details: React.FC = () => {
    const { id } = useParams();
@@ -18,9 +19,13 @@ const Details: React.FC = () => {
 
    // get details data
    const {
-      detailsData: { description, youtubeVideoKey, recommended },
+      detailsData: {
+         description: { title, overview, genres },
+         youtubeVideoKey,
+         recommended,
+      },
    } = useSelector((state: RootState) => state.detailsReducer);
-   console.log(description.title);
+
    return (
       <section className="details">
          <div className="details-container bd-container">
@@ -30,6 +35,13 @@ const Details: React.FC = () => {
                   <YouTube youtubeVideoKey={youtubeVideoKey} />
                </div>
                {/* === trailer description=== */}
+               <div className="description-container">
+                  <Description
+                     title={title}
+                     overview={overview}
+                     genres={genres}
+                  />
+               </div>
             </div>
          </div>
       </section>
