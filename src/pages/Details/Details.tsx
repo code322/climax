@@ -16,6 +16,7 @@ const Details: React.FC = () => {
    const dispatch = useDispatch();
    useEffect(() => {
       dispatch(getDetails(id));
+      window.scrollTo(0, 0);
    }, [dispatch, id]);
 
    // get details data
@@ -26,7 +27,6 @@ const Details: React.FC = () => {
          recommended,
       },
    } = useSelector((state: RootState) => state.detailsReducer);
-   console.log(recommended);
    return (
       <section className="details">
          <div className="details-container bd-container">
@@ -43,10 +43,9 @@ const Details: React.FC = () => {
                      genres={genres}
                   />
                </div>
-
-               {/* === Recommendations=== */}
-               <Recommendations recommended={recommended} />
             </div>
+            {/* === Recommendations=== */}
+            <Recommendations recommended={recommended} />
          </div>
       </section>
    );

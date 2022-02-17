@@ -10,3 +10,23 @@
       }
    }
 }
+
+@media (min-width: 700px) {
+   .details {
+      .details-container {
+         .details-wrapper {
+            display: flex;
+            gap: 3rem;
+            div {
+               flex: 1;
+            }
+            .trailer-container {
+               position: relative;
+               width: 100%;
+               overflow: hidden;
+               padding-top: 40.6%;
+            }
+         }
+      }
+   }
+}
