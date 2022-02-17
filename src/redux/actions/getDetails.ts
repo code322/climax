@@ -45,5 +45,10 @@ export const getDetails =
                recommended: recommended,
             },
          });
-      } catch (error) {}
+      } catch (error: any) {
+         dispatch({
+            type: actionTypes.GET_DETAILS_FAIL,
+            payload: error,
+         });
+      }
    };

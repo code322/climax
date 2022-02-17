@@ -24,7 +24,7 @@ type actionSuccess = {
 
 type actionFail = {
    type: actionTypes.FETCH_MOVIE_FAIL;
-   payload: string;
+   payload: any;
 };
 
 export interface movieData {
@@ -39,21 +39,23 @@ type actionGetDetailsLoading = {
 
 type actionGetDetailsSuccess = {
    type: actionTypes.GET_DETAILS_SUCCESS;
-   payload: {
-      description: {
-         title: string;
-         overview: string;
-         vote_average: number;
-         genres: [{ id: number; name: string }];
-      };
-      youtubeVideoKey: string;
-      recommended: movieData[];
+   payload: detailsTypes;
+};
+
+export type detailsTypes = {
+   description: {
+      title: string;
+      overview: string;
+      vote_average: number;
+      genres: [{ id: number; name: string }];
    };
+   youtubeVideoKey: string;
+   recommended: movieData[];
 };
 
 type actionGetDetailsFail = {
    type: actionTypes.GET_DETAILS_FAIL;
-   payload: string;
+   payload: any;
 };
 
 export type Actions =
