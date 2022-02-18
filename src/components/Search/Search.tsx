@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getResults } from "../../redux/actions/getResultsAction";
 import "./Search.scss";
 
@@ -25,6 +25,9 @@ const Search: React.FC = () => {
 
    return (
       <nav>
+         <Link className="logo-container" to="/">
+            <h1>Climax</h1>
+         </Link>
          <div className="input-container bd-container">
             <input
                className="input "
