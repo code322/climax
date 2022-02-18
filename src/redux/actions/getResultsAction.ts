@@ -15,7 +15,7 @@ export const getResults =
             data: { results },
          } = await axios.get(`${search_movie_url}`, {
             params: {
-               api_Key: API_KEY,
+               api_key: API_KEY,
                query: movieName,
             },
          });
