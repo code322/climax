@@ -8,6 +8,7 @@ import { movieData } from "../../redux/actions/actionTypes";
 import Movies from "../../components/Movies/Movies";
 import { TailSpin } from "react-loader-spinner";
 import { getDetails } from "../../redux/actions/getDetails";
+import video from "../../assets/videos/strangerThings.m4v";
 export type movieTypes = [
    { title: string; moviesData: movieData[] },
    { title: string; moviesData: movieData[] },
@@ -43,8 +44,13 @@ const Home: React.FC = () => {
                            Apple TV, Blu-ray players, and more.
                         </p>
                      </div>
-                     <div className="img-container">
+                     <div className="media-container">
                         <img src={tv} alt="Tv" />
+                        <div className="video-container">
+                           <video autoPlay loop>
+                              <source src={video} type="video/mp4" />
+                           </video>
+                        </div>
                      </div>
                   </div>
                </div>
