@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { getResults } from "../../redux/actions/getResultsAction";
 import "./Search.scss";
 
@@ -12,10 +13,13 @@ const Search: React.FC = () => {
    };
 
    // dispatch getResults when users press enter
+   // and navigate to results page
    const dispatch = useDispatch();
+   const navigate = useNavigate();
    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === "Enter") {
          dispatch(getResults(input));
+         navigate("/results");
       }
    };
 

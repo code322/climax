@@ -14,7 +14,7 @@ const Results = () => {
 
    useEffect(() => {
       setResultsData(() => results.filter((i) => i.poster_path !== null));
-   }, []);
+   }, [results]);
    return (
       <section className="results">
          <div className="results-container bd-container">
