@@ -7,6 +7,11 @@ export enum actionTypes {
    GET_DETAILS_LOADING = "GET_DETAILS_LOADING",
    GET_DETAILS_SUCCESS = "GET_DETAILS_SUCCESS",
    GET_DETAILS_FAIL = "GET_DETAILS_FAIL",
+
+   // GET SEARCH RESULTS
+   GET_RESULTS_LOADING = "GET_RESULTS_LOADING",
+   GET_RESULTS_SUCCESS = "GET_RESULTS_SUCCESS",
+   GET_RESULTS_FAIL = "GET_RESULTS_FAIL",
 }
 
 type actionLoad = {
@@ -58,10 +63,26 @@ type actionGetDetailsFail = {
    payload: any;
 };
 
+// GET SEARCH RESULTS
+type actionGetResultsLoading = {
+   type: actionTypes.GET_RESULTS_LOADING;
+};
+type actionGetResultsSuccess = {
+   type: actionTypes.GET_RESULTS_SUCCESS;
+   payload: movieData[];
+};
+type actionGetResultsFail = {
+   type: actionTypes.GET_RESULTS_FAIL;
+   payload: any;
+};
+
 export type Actions =
    | actionLoad
    | actionSuccess
    | actionFail
    | actionGetDetailsFail
    | actionGetDetailsLoading
-   | actionGetDetailsSuccess;
+   | actionGetDetailsSuccess
+   | actionGetResultsLoading
+   | actionGetResultsSuccess
+   | actionGetResultsFail;
